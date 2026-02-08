@@ -1,0 +1,71 @@
+{
+  "extensionName": {
+    "message": "RoServerTools"
+  },
+  "extensionDescription": {
+    "message": "Enhances Roblox game pages with detailed server information and region selection."
+  },
+  "serversIn": {
+    "message": "Servers in"
+  },
+  "playerCount": {
+    "message": "PLAYING_COUNT / MAX_PLAYERS players"
+  },
+  "regionSelector": {
+    "message": "Region Selector"
+  },
+  "joinButton": {
+    "message": "Join"
+  },
+  "closeButton": {
+    "message": "Close"
+  },
+  "sortPingLowest": {
+    "message": "Sort: Ping (Lowest)"
+  },
+  "sortPlayersHighest": {
+    "message": "Sort: Players (Highest)"
+  },
+  "sortPlayersLowest": {
+    "message": "Sort: Players (Lowest)"
+  },
+  "refreshServerList": {
+    "message": "Refresh Server List"
+  },
+  "loadMoreServers": {
+    "message": "Load More Servers"
+  },
+  "comingEarly2026": {
+    "message": "Coming Soon"
+  },
+  "serversText": {
+    "message": "SERVER_COUNT server"
+  },
+  "serversTextPlural": {
+    "message": "SERVER_COUNT servers"
+  },
+  "unknown": {
+    "message": "Unknown"
+  },
+  "unknownLocation": {
+    "message": "Unknown Location"
+  },
+  "focusOnRegion": {
+    "message": "Focus on this region"
+  },
+  "loading": {
+    "message": "Loading..."
+  },
+  "loadingServers": {
+    "message": "Loading servers..."
+  },
+  "errorLoadingServers": {
+    "message": "Error loading servers. Please try again."
+  },
+  "errorLoadingMore": {
+    "message": "Error loading more servers"
+  },
+  "noPlayersOnline": {
+    "message": "No players online"
+  }
+}
