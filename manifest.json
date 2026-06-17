@@ -1,73 +1,98 @@
 {
-  "manifest_version": 3,
-  "name": "__MSG_extensionName__",
-  "description": "__MSG_extensionDescription__",
-  "version": "1.0.0",
-  "default_locale": "en",
-  "background": {
-    "service_worker": "src/background/service_worker.js"
-  },
-  "icons": {
-  "128": "icon.png"
-  },
-  "permissions": [
-    "scripting",
-    "storage",
-    "declarativeNetRequest"
-  ],
-  "host_permissions": [
-    "https://www.roblox.com/*",
-    "https://gamejoin.roblox.com/*",
-    "https://games.roblox.com/*",
-    "https://users.roblox.com/*",
-    "https://friends.roblox.com/*",
-    "https://presence.roblox.com/*",
-    "https://thumbnails.roblox.com/*"
-  ],
-  "content_scripts": [
-    {
-      "matches": [
-        "https://www.roblox.com/games/*",
-        "https://www.roblox.com/*/games/*"
-      ],
-      "js": [
-        "src/content/shared/i18n.js",
-        "src/content/rsd_regionData.js",
-        "src/content/page/modules/ctx.js",
-        "src/content/page/modules/utils.js",
-        "src/content/page/modules/theme.js",
-        "src/content/page/modules/api.js",
-        "src/content/page/modules/join.js",
-        "src/content/page/modules/history_panel/utils.js",
-        "src/content/page/modules/history_panel/ui.js",
-        "src/content/page/modules/history_panel/history_panel.js",
-        "src/content/page/modules/serverlist_panel/utils.js",
-        "src/content/page/modules/serverlist_panel/ui.js",
-        "src/content/page/modules/serverlist_panel/serverlist_panel.js",
-        "src/content/page/modules/friends_serverlist_panel/utils.js",
-        "src/content/page/modules/friends_serverlist_panel/ui.js",
-        "src/content/page/modules/friends_serverlist_panel/friends_serverlist_panel.js",
-        "src/content/page/modules/region_panel/utils.js",
-        "src/content/page/modules/region_panel/ui.js",
-        "src/content/page/modules/region_panel/region_panel.js",
-        "src/content/page/gamePage.js"
-      ],
-      "run_at": "document_end",
-      "all_frames": false,
-      "css": [
-        "src/styles/roservertools.css"
-      ]
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "assets/data/regionList.json",
-        "assets/icons/*.png"
-      ],
-      "matches": [
-        "https://www.roblox.com/*"
-      ]
-    }
-  ]
+   "background": {
+      "service_worker": "src/background/service_worker.js"
+   },
+   "content_scripts": [
+      {
+         "all_frames": false,
+         "css": [
+            "src/styles/roservertools.css"
+         ],
+         "js": [
+            "src/shared/debug.js",
+            "src/content/shared/i18n.js",
+            "src/content/rsd_regionData.js",
+            "src/content/page/modules/ctx.js",
+            "src/content/page/modules/utils.js",
+            "src/content/page/modules/theme.js",
+            "src/content/page/modules/api.js",
+            "src/content/page/modules/join.js",
+            "src/content/page/modules/history_panel/utils.js",
+            "src/content/page/modules/history_panel/ui.js",
+            "src/content/page/modules/serverlist_panel/serverlist_panel.js",
+            "src/content/page/modules/region_panel/utils.js",
+            "src/content/page/modules/region_panel/ui.js",
+            "src/content/page/gamePage.js"
+         ],
+         "matches": [
+            "https://www.roblox.com/games/*",
+            "https://www.roblox.com/*/games/*"
+         ],
+         "run_at": "document_end"
+      },
+      {
+         "all_frames": false,
+         "js": [
+            "src/shared/debug.js",
+            "src/content/page/profileRap.js"
+         ],
+         "matches": [
+            "https://www.roblox.com/users/*/profile*",
+            "https://www.roblox.com/*/users/*/profile*"
+         ],
+         "run_at": "document_end",
+         "css": [
+            "src/styles/roservertools_pages.css"
+         ]
+      },
+      {
+         "all_frames": false,
+         "js": [
+            "src/shared/debug.js",
+            "src/content/page/itemRollimons.js"
+         ],
+         "matches": [
+            "https://www.roblox.com/catalog/*",
+            "https://www.roblox.com/*/catalog/*",
+            "https://www.roblox.com/bundles/*",
+            "https://www.roblox.com/*/bundles/*"
+         ],
+         "run_at": "document_end",
+         "css": [
+            "src/styles/roservertools_pages.css"
+         ]
+      }
+   ],
+   "default_locale": "en",
+   "description": "__MSG_extensionDescription__",
+   "host_permissions": [
+      "https://www.roblox.com/*",
+      "https://gamejoin.roblox.com/*",
+      "https://games.roblox.com/*",
+      "https://users.roblox.com/*",
+      "https://thumbnails.roblox.com/*",
+      "https://inventory.roblox.com/*",
+      "https://catalog.roblox.com/*"
+   ],
+   "icons": {
+      "128": "icon.png"
+   },
+   "manifest_version": 3,
+   "name": "__MSG_extensionName__",
+   "permissions": [
+      "scripting",
+      "storage",
+      "declarativeNetRequest"
+   ],
+   "version": "2.0",
+   "web_accessible_resources": [
+      {
+         "matches": [
+            "https://www.roblox.com/*"
+         ],
+         "resources": [
+            "assets/data/regionList.json"
+         ]
+      }
+   ]
 }
